@@ -6,7 +6,7 @@
 /*   By: adesmet <adesmet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 17:21:57 by adesmet           #+#    #+#             */
-/*   Updated: 2021/05/09 11:50:21 by adesmet          ###   ########.fr       */
+/*   Updated: 2021/05/13 01:16:51 by adesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int ft_print_di(t_tag tags, va_list ap)
     ans = ft_ditos(tags, ap);
     ans = ft_width(ans, tags);
     ret = write(1, ans, ft_strlen(ans));
+
     free(ans);
     return (ret);
 }

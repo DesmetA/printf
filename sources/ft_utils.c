@@ -6,7 +6,7 @@
 /*   By: adesmet <adesmet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 01:19:46 by adesmet           #+#    #+#             */
-/*   Updated: 2021/05/05 17:39:59 by adesmet          ###   ########.fr       */
+/*   Updated: 2021/05/12 12:46:18 by adesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,7 @@ char    *ft_utoa_base(unsigned int n, char* base)
     unsigned int     radix;
 
     radix = ft_strlen(base);
-    printf("%u\n",radix);
     size = ft_count_digit(n, radix);
-    printf("%d\n",size);
     if(!(ans = malloc(sizeof(char *) *(size + 1))))
         return (NULL);
     ans[size--] = '\0';

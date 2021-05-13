@@ -6,7 +6,7 @@
 /*   By: adesmet <adesmet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/19 00:31:17 by adesmet           #+#    #+#             */
-/*   Updated: 2021/05/12 12:02:24 by adesmet          ###   ########.fr       */
+/*   Updated: 2021/05/13 01:48:20 by adesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,12 +86,14 @@ void     ft_parse(const char **toParse, t_tag *tags, va_list ap)
     tags->flag = 0;
     tags->width = 0;
     tags->precision = -1;
+        printf("Test");
     while(ft_isdigit(**toParse) || ft_strchr("-.*", **toParse))
     {
         ft_get_flags(toParse, tags);
         ft_get_width(toParse, tags, ap);
         ft_get_precision(toParse, tags, ap);
     }
+
     tags->specifier = *(ft_strchr(SPECIFIERS,**toParse));
     if(tags->precision >= 0 && tags->flag & FLAG_0)
         tags->flag &= ~FLAG_0;

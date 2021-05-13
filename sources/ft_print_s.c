@@ -6,7 +6,7 @@
 /*   By: adesmet <adesmet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 01:26:17 by adesmet           #+#    #+#             */
-/*   Updated: 2021/05/05 16:21:56 by adesmet          ###   ########.fr       */
+/*   Updated: 2021/05/12 14:52:18 by adesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,12 @@ int ft_print_s(t_tag tags, va_list ap)
     int     slen;
 
     toPrint = (char*)va_arg(ap, char *);
+    if(!toPrint && (tags.precision >= 6 || tags.precision < 0))
+        toPrint = "(null)";
+    else if (!toPrint)
+        toPrint = ft_strdup("");
+    if(tags.precision >= 0)
+        toPrint = ft_substr(toPrint,0,tags.precision);
     slen = ft_strlen(toPrint);
     if(tags.flag & FLAG_MINUS)
     {
