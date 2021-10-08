@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adesmet <adesmet@student.s19.be>           +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/31 11:36:17 by adesmet           #+#    #+#             */
-/*   Updated: 2021/02/03 07:58:42 by adesmet          ###   ########.fr       */
+/*   Updated: 2021/10/08 13:02:39 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static	int	ft_count_digit(int n)
 	return (i);
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char	*ans;
 	int		size;
@@ -42,7 +42,8 @@ char		*ft_itoa(int n)
 	size = ft_count_digit(n);
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	if (!(ans = ft_calloc(sizeof(char), size + 1)))
+	ans = ft_calloc(sizeof(char), size + 1);
+	if (!ans)
 		return (NULL);
 	if (n < 0)
 	{
@@ -51,7 +52,6 @@ char		*ft_itoa(int n)
 	}
 	else
 		num = n;
-	ans[size] = '\0';
 	if (num == 0)
 		ans[0] = '0';
 	while (num)

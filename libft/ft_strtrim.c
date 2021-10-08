@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adesmet <adesmet@student.s19.be>           +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/18 19:42:05 by adesmet           #+#    #+#             */
-/*   Updated: 2021/02/02 01:43:26 by adesmet          ###   ########.fr       */
+/*   Updated: 2021/10/08 12:49:13 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_is_set(char const *s, char c)
+int	ft_is_set(char const *s, char c)
 {
 	size_t	i;
 

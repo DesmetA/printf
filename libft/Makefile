@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: adesmet <adesmet@student.s19.be>           +#+  +:+       +#+         #
+#    By: user42 <user42@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/02 19:04:53 by adesmet           #+#    #+#              #
-#    Updated: 2021/02/08 15:50:47 by adesmet          ###   ########.fr        #
+#    Updated: 2021/10/08 13:25:53 by user42           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC = 	ft_strlen.c ft_strlcat.c ft_memset.c ft_calloc.c \
 		ft_strlcpy.c ft_strdup.c ft_isalnum.c ft_strnstr.c \
 		ft_substr.c ft_split.c ft_putchar_fd.c ft_putnbr_fd.c \
 		ft_putendl_fd.c ft_putstr_fd.c ft_strjoin.c ft_strtrim.c \
-		ft_itoa.c ft_strmapi.c
+		ft_itoa.c ft_strmapi.c ft_striteri.c
 
 SRCS_BONUS	=	ft_lstadd_back.c\
 				ft_lstclear.c\

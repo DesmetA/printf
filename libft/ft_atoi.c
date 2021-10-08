@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adesmet <adesmet@student.s19.be>           +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 21:25:35 by adesmet           #+#    #+#             */
-/*   Updated: 2021/02/05 02:36:12 by adesmet          ###   ########.fr       */
+/*   Updated: 2021/10/08 13:08:36 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,25 @@ int	ft_atoi(const char *str)
 {
 	unsigned long long		ans;
 	int						sign;
-	int						i;
 
-	i = 0;
 	sign = 1;
 	ans = 0;
-	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
-		i++;
-	if (str[i] == '+')
-		i++;
-	else if (str[i] == '-')
+	while (*str == ' ' || (*str >= '\t' && *str <= '\r'))
+		str++;
+	if (*str == '+' || *str == '-')
 	{
-		sign = -1;
-		i++;
+		if (*str == '-')
+			sign = -1;
+		str++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	while (*str >= '0' && *str <= '9')
 	{
-		if (ans >= LLONG_MAX)
-			return (sign == 1 ? -1 : 0);
-		ans = (ans * 10) + str[i] - '0';
-		i++;
+		ans = (ans * 10) + *str - '0';
+		str++;
 	}
+	if (ans >= LLONG_MAX && sign == 1)
+		return (-1);
+	if (ans >= LLONG_MAX && sign == -1)
+		return (0);
 	return (sign * ans);
 }

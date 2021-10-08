@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 11:56:05 by adesmet           #+#    #+#             */
-/*   Updated: 2021/10/07 23:05:49 by user42           ###   ########.fr       */
+/*   Updated: 2021/10/08 00:58:12 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int		ft_print_cp(t_tag tags, va_list ap);
 int		ft_print_s(t_tag tags, va_list ap);
 int		ft_print_di(t_tag tags, va_list ap);
 int		ft_print_u(t_tag tags, va_list ap);
-int		ft_print_pxX(t_tag tags, va_list ap);
+int		ft_print_px(t_tag tags, va_list ap);
 void	ft_pad(int size, char zero_space);
 char	*ft_precision(char *s, int prc);
 char	*ft_width(char *s, t_tag tags);
