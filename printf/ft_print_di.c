@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 17:21:57 by adesmet           #+#    #+#             */
-/*   Updated: 2021/10/08 00:54:06 by user42           ###   ########.fr       */
+/*   Updated: 2021/10/09 15:04:56 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ char	*ft_ditos(t_tag tags, va_list ap)
 		ret = ft_itoa(n);
 		ret = ft_precision(ret, tags.precision);
 		if ((tags.flag & FLAG_PLUS) && n >= 0)
-			ft_strlcat("+", ret, ft_strlen(ret) + 1);
+			ret = ft_adds(ret, "+");
 		if ((tags.flag & FLAG_SPACE) && n >= 0)
-			ft_strlcat(" ", ret, ft_strlen(ret) + 1);
+			ret = ft_adds(ret, " ");
 	}
 	return (ret);
 }

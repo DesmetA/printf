@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/19 00:31:17 by adesmet           #+#    #+#             */
-/*   Updated: 2021/10/08 00:50:23 by user42           ###   ########.fr       */
+/*   Updated: 2021/10/09 12:46:52 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ void	ft_parse(const char **toParse, t_tag *tags, va_list ap)
 	tags->flag = 0;
 	tags->width = 0;
 	tags->precision = -1;
-	while (ft_isdigit(**toParse) || ft_strchr("-.*", **toParse))
+	while (ft_isdigit(**toParse) || ft_strchr("-.*+ #", **toParse))
 	{
 		ft_get_flags(toParse, tags);
 		ft_get_width(toParse, tags, ap);

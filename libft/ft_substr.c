@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 22:35:24 by adesmet           #+#    #+#             */
-/*   Updated: 2021/10/08 14:23:22 by user42           ###   ########.fr       */
+/*   Updated: 2021/10/08 18:55:19 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (ft_strlen(s) - start + 1 < len)
 		len2 = ft_strlen(s) - start;
 	if (ft_strlen(s) < start)
-	{
-		ptr = (char *)ft_calloc(sizeof(char), 1);
-		if (!ptr)
-			return (NULL);
-		return (ptr);
-	}
-	ptr = ft_calloc(sizeof(char), len2 + 1);
+		len2 = 0;
+	ptr = malloc(sizeof(char) * (len2 + 1));
 	if (!ptr)
 		return (NULL);
 	i = -1;
 	while (++i < len2)
 		ptr[i] = s[start + i];
-	free(s);
+	ptr[i] = '\0';
 	return (ptr);
 }

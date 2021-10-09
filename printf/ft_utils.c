@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 01:19:46 by adesmet           #+#    #+#             */
-/*   Updated: 2021/10/08 01:12:14 by user42           ###   ########.fr       */
+/*   Updated: 2021/10/09 15:04:34 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,15 @@ void	ft_pad(int size, char zero_space)
 	i = -1;
 	while (++i < size)
 		write(1, &zero_space, 1);
+}
+
+char	*ft_adds(char *s, char *s2)
+{
+	char	*ans;
+
+	ans = ft_strjoin(s2, s);
+	free(s);
+	return (ans);
 }
 
 int	ft_count_digit(unsigned long long n, unsigned long long base)

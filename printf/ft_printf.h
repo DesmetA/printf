@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 11:56:05 by adesmet           #+#    #+#             */
-/*   Updated: 2021/10/08 00:58:12 by user42           ###   ########.fr       */
+/*   Updated: 2021/10/09 14:54:08 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,6 @@ char	*ft_utoa_base(unsigned long long n, char *base);
 char	*ft_ditos(t_tag tags, va_list ap);
 char	*ft_utos(t_tag tags, va_list ap);
 char	*ft_xtos(t_tag tags, va_list ap);
+char	*ft_adds(char *s, char *s2);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: user42 <user42@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/02 23:44:35 by adesmet           #+#    #+#              #
-#    Updated: 2021/10/07 23:29:05 by user42           ###   ########.fr        #
+#    Updated: 2021/10/08 18:10:57 by user42           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ FILES = 	ft_printf.c\
 			ft_format.c\
 			ft_print_cp.c\
 			ft_print_di.c\
-			ft_print_pxX.c\
+			ft_print_px.c\
 			ft_print_s.c\
 			ft_print_u.c\
 			ft_utils.c\

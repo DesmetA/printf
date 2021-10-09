@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 13:47:22 by adesmet           #+#    #+#             */
-/*   Updated: 2021/10/08 00:58:27 by user42           ###   ########.fr       */
+/*   Updated: 2021/10/09 15:41:06 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,12 @@ char	*ft_xtos(t_tag tags, va_list ap)
 	{
 		ret = ft_utoa_base(n, base);
 		ret = ft_precision(ret, tags.precision);
+		if (tags.flag & FLAG_HASH && tags.specifier == 'x' && \
+		!(ret[0] == '0' && ret[1] == '\0'))
+			ret = ft_adds(ret, "0x");
+		if (tags.flag & FLAG_HASH && tags.specifier == 'X' && \
+		!(ret[0] == '0' && ret[1] == '\0'))
+			ret = ft_adds(ret, "0X");
 	}
 	return (ret);
 }
@@ -47,8 +53,7 @@ char	*ft_ptos(t_tag tags, va_list ap)
 	{
 		ret = ft_utoa_base(n, "0123456789abcdef");
 		ret = ft_precision(ret, tags.precision);
-		ans = ft_strjoin("0x", ret);
-		free(ret);
+		ans = ft_adds(ret, "0x");
 	}
 	return (ans);
 }

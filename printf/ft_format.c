@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 19:09:07 by adesmet           #+#    #+#             */
-/*   Updated: 2021/10/08 00:37:33 by user42           ###   ########.fr       */
+/*   Updated: 2021/10/09 15:20:19 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,23 @@
 
 char	*ft_prc_is_neg(char *s, int prc)
 {
-	char	*tmp;
 	char	*ans;
 	int		size;
 	int		i;
 
-	tmp = ft_substr(s, 1, ft_strlen(s) - 1);
-	size = prc - ft_strlen(tmp);
-	i = -1;
+	i = 0;
+	size = prc - ft_strlen(s) + 1;
 	ans = ft_calloc(sizeof(char), prc + 2);
 	if (!ans)
 		return (NULL);
 	ans[0] = '-';
-	while (++i < size)
-		ans[i + 1] = '0';
+	while (++i <= size)
+		ans[i] = '0';
 	while (i <= prc)
 	{
-		ans[i + 1] = tmp[i - size];
+		ans[i] = s[i - size];
 		i++;
-	}
-	ans[i] = '\0';
+	}	
 	free(s);
 	return (ans);
 }
@@ -61,7 +58,6 @@ char	*ft_precision(char *s, int prc)
 		ans[i] = s[i - size];
 		i++;
 	}
-	ans[i] = '\0';
 	free(s);
 	return (ans);
 }
@@ -82,26 +78,22 @@ char	*ft_width_minus(char *s, t_tag tags)
 		ans[i] = ' ';
 		i++;
 	}
+	free(s);
 	return (ans);
 }
 
 char	*ft_width_reg(char *s, t_tag tags, int fill_size, char pad)
 {
 	char	*ans;
-	char	*tmp;
 	int		i;
-	int		j;
 
 	i = -1;
-	j = 0;
-	tmp = s;
 	ans = ft_calloc(sizeof(char), tags.width + 2);
 	if (!ans)
 		return (NULL);
 	if (tags.flag & FLAG_0 && s[0] == '-')
 	{
 		ans[0] = '-';
-		tmp = ft_substr(s, 1, ft_strlen(s) - 1);
 		fill_size++;
 		i++;
 	}
@@ -109,9 +101,11 @@ char	*ft_width_reg(char *s, t_tag tags, int fill_size, char pad)
 		ans[i] = pad;
 	while (i < tags.width)
 	{
-		ans[i] = tmp[j];
+		if (tags.flag & FLAG_0 && s[0] == '-')
+			ans[i] = s[i - fill_size + 1];
+		else
+			ans[i] = s[i - fill_size];
 		i++;
-		j++;
 	}
 	free(s);
 	return (ans);
